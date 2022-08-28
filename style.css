@@ -7,6 +7,13 @@
 
 body {
     background-color: #f4c531;
+    padding: 0;
+    margin: 0;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 .container {
@@ -14,7 +21,7 @@ body {
     font-size: 16px;
     padding: 3em 2.8em;
     width: 90vw;
-    max-width: 32em;
+    /* max-width: 32em; */
     margin: 0 auto;
     border-radius: 0.6em;
 }
@@ -68,14 +75,12 @@ img {
 
 #show-recipe {
     font-size: 1em;
-    position: relative;
-    left: 75%;
     padding: 0.9em 0.6em;
     background-color: #f4c531;
     border: none;
-    top: 1.5em;
     border-radius: 0.3em;
     font-weight: 600;
+    float: right;
 }
 
 #recipe {
@@ -114,7 +119,7 @@ ul {
     font-size: 1em;
     position: relative;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: repeat(2, 1fr);
     gap: 0.8em 1.1em;
     padding: 1.2em 0 0 1.2em;
     color: #303040;
@@ -134,6 +139,112 @@ h3 {
 }
 
 #result {
-    display: grid;
-
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
+
+.resultContainer {
+    width: 30%;
+}
+
+.break {
+    flex-basis: 100%;
+    height: 0;
+}
+
+@media screen and (max-width: 700px) {
+    #ingredient-con ul {
+        grid-template-columns: 1fr;
+    }
+
+    .resultContainer {
+        width: 45%;
+    }
+}
+
+button {
+    cursor: pointer;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    width: 320px;   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    border-radius: 20px;
+    padding: 30px 30px 70px;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content button.close {
+    width: 30px;
+    font-size: 20px;
+    color: #c0c5cb;
+    align-self: flex-end;
+    background-color: transparent;
+    border: none;
+    margin-bottom: 10px;
+  }
+.modal-content p {
+    margin-bottom: 40px;
+    font-size: 18px;
+  }
+.modal-content button.accept {
+    background-color: #ed6755;
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+    padding: 14px;
+    font-size: 16px;
+    color: white;
+    box-shadow: 0px 6px 18px -5px #ed6755;
+  }
+  
